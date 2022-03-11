@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+
+  jupyterlab:
+
+    image: dddlab/base-python:latest
+
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      target: base-python
+
+    ports:
+      - 444:8888
+
+    user: root
+
+    environment:
+      - RESTARTABLE=yes
+      - GEN_CERT=yes
+      - GRANT_SUDO=yes
+      - JUPYTER_TOKEN=asdf
+      - SHELL=/bin/zsh
+      # - DOCKER_STACKS_JUPYTER_CMD=lab
+
+    volumes:
+      - ${PWD}:/home/jovyan/work
