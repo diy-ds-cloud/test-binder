@@ -23,3 +23,5 @@ RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master
 ENV SHELL=/usr/bin/zsh
 
 RUN echo "######################" && env
+
+RUN echo "$BINDERHUB_VERSION"
