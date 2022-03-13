@@ -21,3 +21,5 @@ ENV ZSH_DISABLE_COMPFIX=true
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
 ENV SHELL=/usr/bin/zsh
+
+RUN echo "######################" && env
